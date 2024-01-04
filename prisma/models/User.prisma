@@ -1,0 +1,8 @@
+model User {
+  id        String      @id @default(uuid())
+  username  String      @unique
+  name      String
+  posts     Post[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}

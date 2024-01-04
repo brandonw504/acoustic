@@ -1,0 +1,6 @@
+model Song {
+  id        String    @id
+  shares    Int       @default(0)
+  favorites Int       @default(0)
+  posts     Post[]
+}

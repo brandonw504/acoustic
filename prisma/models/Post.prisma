@@ -1,0 +1,12 @@
+model Post {
+  userId    String
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  songId    String
+  song      Song        @relation(fields: [songId], references: [id], onDelete: Cascade)
+  favorite  Boolean
+  caption   String?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@id(name: "id", fields: [userId, songId])
+}
